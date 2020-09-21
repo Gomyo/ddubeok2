@@ -104,7 +104,7 @@
 				<!-- Modal footer -->
 				<div class="modal-footer">
 					<button type="button" class="btn btn-default" data-dismiss="modal">닫기</button>
-					<button type="button" id="btn-signup" class="btn btn-primary">회원가입</button>
+					<button type="button" data-dismiss="modal" class="btn btn-primary" data-toggle="modal" data-target="#signupModal">회원가입</button>
 				</div>
 			</div>
 		</div>
