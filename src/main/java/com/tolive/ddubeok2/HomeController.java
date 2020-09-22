@@ -15,4 +15,13 @@ public class HomeController {
 		
 		return modelAndView;
 	}
+	
+	@RequestMapping(value="/free_board.do")
+	public ModelAndView freeBoardRequest() {
+		
+		ModelAndView modelAndView = new ModelAndView();
+		modelAndView.setViewName("free_board");
+		
+		return modelAndView;
+	}
 }
