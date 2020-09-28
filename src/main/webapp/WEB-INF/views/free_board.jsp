@@ -13,6 +13,7 @@
 </head>
 <body>
 
+<jsp:include page="../include/header.jsp" />
 	<div class="container">
 		<br /> <br />
 		<h2>여행지 게시판</h2>
@@ -174,8 +175,9 @@
 				</div>
 			</div>
 		</div>
-
 	</div>
+
+<jsp:include page="../include/footer.jsp" />
 
 </body>
 </html>
