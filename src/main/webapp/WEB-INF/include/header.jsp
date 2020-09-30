@@ -3,9 +3,9 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
 <!-- navbar -->
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
-    <a class="navbar-brand" href="/ddubeok2/home.do">
-    <img src="./resources/image/icon-walking.png" style="width:30px; height:30px" alt="뚜벅이 로고"></a>
+<nav class="navbar navbar-expand-lg navbar-light" style="background-color: #FFFFFF;">
+    <img src="./resources/image/icon-walking.png" style="width:30px; height:30px" alt="뚜벅이 로고">
+    <a class="navbar-brand" href="/ddubeok2/home.do">DDUBEOK2</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
         aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
@@ -14,10 +14,13 @@
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav mr-auto">
             <li class="nav-item active">
+            	<a class="nav-link" href="/ddubeok2/home.do">홈</a>
+            </li>
+            <li class="nav-item active">
             	<a class="nav-link" href="/ddubeok2/notice.do">공지사항</a>
             </li>
             <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
+                <a class="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-toggle="dropdown"
                     aria-haspopup="true" aria-expanded="false">
                     	여행지 추천
                 </a>
@@ -32,7 +35,7 @@
                 </div>
             </li>
             <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
+                <a class="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-toggle="dropdown"
                     aria-haspopup="true" aria-expanded="false">
                     	커뮤니티
                 </a>
@@ -61,27 +64,6 @@
 			<a type="button" class="btn btn-default" data-toggle="modal"
 						data-target="#logout">로그아웃</a>
 		</c:if>
-		
-		<!--
-		myNav overlay (사용하지 않으려 함)
-		
-		<span style="font-size:30px; cursor:pointer" onclick="openNav()">&#9776;</span> 
-		<div id="myNav" class="overlay">
-			<a href="javascript:void(0)" class="nav-closebtn" onclick="closeNav()">&times;</a>
-			<div class="overlay-content">
-				<div class="container">
-					<div class="row">
-						<div onclick="location.href='/about/'">개발진</div>
-						<div onclick="location.href='/notice/'">공지사항</div>
-						<div onclick="location.href='/tourcourse/'">추천코스</div>
-					</div>
-					<div class="side-social box-flex">
-						<a href="https://www.instagram.com/joo.non/?hl=ko" target="_blank"><i class="fa fa-instagram" aria-hidden="true"></i></a>
-					</div>
-				</div>
-			</div>
-		</div>
-		-->
     </div>
 </nav>
 
