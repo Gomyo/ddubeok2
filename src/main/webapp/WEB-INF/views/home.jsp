@@ -14,15 +14,16 @@
 
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-<link rel="stylesheet" href="./resources/css/main.css">
+<link rel="stylesheet" href="./resources/css/main.css?after">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </head>
 <body>
+<div class="wrap">
 	<jsp:include page="../include/header.jsp" />
 	<!-- Main Page -->
-	<div class="container">
+	<div class="main-content">
 		<div class="Mainbanner">
 			<div class="mainVideo">
 				<video id="video1" autoplay="" muted="" loop="" playsinline="" style="width:100%; height:100%;">
@@ -30,8 +31,17 @@
 				</video>
 			</div>
 		</div>
+		
+		<div class="container landing">
+			<div class="row">
+				<div class="Maininfo">
+					<img src="./resources/image/self_trip.jpg" style="height:100%;">
+				</div>
+			</div>
+		</div>
+		
 	</div>
-	
 	<jsp:include page="../include/footer.jsp" />
+</div>
 </body>
 </html>

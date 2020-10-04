@@ -3,24 +3,26 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
 <!-- Footer -->
-<footer class="footer">
+<div class="footer vertical-center">
 	<div class="container">
 		<div class="row">
-			<div class="col-md-4">
+			<div class="col-md-9">
+				<!-- Social Icons -->
+				<div class="footer-social">
+					<span class="footer-social-items"><a href="https://www.instagram.com/joo.non/?hl=ko" target="_blank"><img src="./resources/image/youtube.png" style="width:30px;"></a></span>
+					<span class="footer-social-items"><a href="https://www.instagram.com/joo.non/?hl=ko" target="_blank"><img src="./resources/image/instagram.png" style="width:30px;"></a></span>
+					<span class="footer-social-items"><a href="https://www.instagram.com/joo.non/?hl=ko" target="_blank"><img src="./resources/image/facebook.png" style="width:30px;"></a></span>
+					<span class="footer-social-items"><a href="https://www.instagram.com/joo.non/?hl=ko" target="_blank"><img src="./resources/image/kakaotalk.png" style="width:30px;"></a></span>
+					<span class="footer-social-items"><a href="https://www.instagram.com/joo.non/?hl=ko" target="_blank"><img src="./resources/image/naverblog.png" style="width:30px;"></a></span>
+				</div>
+			</div>
+			<div class="col-md-3">
 				<!-- Contact -->
-				<span class="contact">
+				<div class="contact">
 					&copy; gomyo <br/>
 					Email : engcraft1102@gmail.com
-				</span>
-			</div>
-			<div class="col-md-8">
-				<!-- Social Icons -->
-				<div class="icons">
-					<a href="/ddubeok2/home.do" class="fa fa-twitter"></a>
-					<a href="/ddubeok2/home.do" class="fa fa-facebook-f"></a>
-					<a href="https://www.instagram.com/joo.non/?hl=ko" class="fa fa-instagram"></a>
 				</div>
 			</div>
 		</div>
 	</div>
-</footer>
+</div>
