@@ -24,4 +24,13 @@ public class HomeController {
 		
 		return modelAndView;
 	}
+	
+	@RequestMapping(value="/notice.do")
+	public ModelAndView noticeRequest() {
+		
+		ModelAndView modelAndView = new ModelAndView();
+		modelAndView.setViewName("notice");
+		
+		return modelAndView;
+	}
 }
