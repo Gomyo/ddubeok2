@@ -1,39 +1,36 @@
 package com.tolive.ddubeok2;
 
-import java.text.DateFormat;
-import java.util.Date;
-import java.util.Locale;
-
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Controller;
-import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.servlet.ModelAndView;
 
-/**
- * Handles requests for the application home page.
- */
 @Controller
 public class HomeController {
 	
-	private static final Logger logger = LoggerFactory.getLogger(HomeController.class);
-	
-	/**
-	 * Simply selects the home view to render by returning its name.
-	 */
-	@RequestMapping(value = "/", method = RequestMethod.GET)
-	public String home(Locale locale, Model model) {
-		logger.info("Welcome home! The client locale is {}.", locale);
+	@RequestMapping(value="/home.do")
+	public ModelAndView indexRequest() {
 		
-		Date date = new Date();
-		DateFormat dateFormat = DateFormat.getDateTimeInstance(DateFormat.LONG, DateFormat.LONG, locale);
+		ModelAndView modelAndView = new ModelAndView();
+		modelAndView.setViewName("home");
 		
-		String formattedDate = dateFormat.format(date);
-		
-		model.addAttribute("serverTime", formattedDate );
-		
-		return "home";
+		return modelAndView;
 	}
 	
+	@RequestMapping(value="/free_board.do")
+	public ModelAndView freeBoardRequest() {
+		
+		ModelAndView modelAndView = new ModelAndView();
+		modelAndView.setViewName("free_board");
+		
+		return modelAndView;
+	}
+	
+	@RequestMapping(value="/notice.do")
+	public ModelAndView noticeRequest() {
+		
+		ModelAndView modelAndView = new ModelAndView();
+		modelAndView.setViewName("notice");
+		
+		return modelAndView;
+	}
 }
