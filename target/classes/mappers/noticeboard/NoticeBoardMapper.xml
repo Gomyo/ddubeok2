@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.tolive.ddubeok2.noticeboard.repository.INoticeBoardMapper">
+
+<resultMap id="NoticeBoardMap" type="com.tolive.ddubeok2.noticeboard.domain.NoticeBoard">
+	<id property="boardId" column="board_id" />
+	<result property="title" column="title" />
+	<result property="content" column="content" />
+	<result property="regDate" column="reg_date" />
+	<result property="viewCnt" column="view_cnt" />
+	<result property="replyCnt" column="reply_cnt" />
+</resultMap>
+
+<insert id="write">
+	INSERT INTO notice_board
+		(title, content)
+	VALUES (#{title}, #{content})
+</insert>
+
+<update id="update">
+	UPDATE notice_board
+	SET title = #{title}, content = #{content}
+	WHERE board_id = #{boardId}
+</update>
+
+<update id="updateReplyCnt">
+	UPDATE notice_board 
+	SET reply_cnt = #{count}
+	WHERE board_id = #{boardId}
+</update>
+
+<update id="updateViewCnt">
+	UPDATE notice_board 
+	SET view_cnt = view_cnt + 1
+	WHERE board_id = #{boardId}
+</update>
+
+<delete id="delete">
+	DELETE FROM notice_board
+	WHERE board_id = #{boardId}
+</delete>
+
+<select id="selectOne" resultMap="NoticeBoardMap">
+	SELECT * FROM notice_board
+	WHERE board_id = #{boardId}
+</select>
+
+<select id="selectAll" resultMap="NoticeBoardMap">
+	SELECT * FROM notice_board
+	ORDER BY board_id DESC
+</select>
+
+<select id="countBoard" resultType="int">
+	SELECT COUNT(board_id) 
+	FROM notice_board
+</select>
+
+</mapper>
