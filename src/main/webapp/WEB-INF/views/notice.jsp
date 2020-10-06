@@ -13,7 +13,7 @@
 </head>
 <body>
 <div class="wrap">
-	<jsp:include page="../include/header.jsp" />
+	<jsp:include page="./include/header.jsp" />
 	<div class="main-content">
 		<!-- 왼쪽 메뉴 -->
 	        <div class="table-wrapper-scroll-y my-custom-scrollbar">
@@ -91,7 +91,7 @@
 				</table>
 	    </div>
 	</div>
-	<jsp:include page="../include/footer.jsp"/>
+	<jsp:include page="./include/footer.jsp"/>
 </div>
 </body>
 </html>
