@@ -21,7 +21,7 @@
 </head>
 <body>
 <div class="wrap">
-	<jsp:include page="../include/header.jsp" />
+	<jsp:include page="./include/header.jsp" />
 	<!-- Main Page -->
 	<div class="main-content">
 		<div class="Mainbanner">
@@ -39,9 +39,18 @@
 				</div>
 			</div>
 		</div>
-		
 	</div>
-	<jsp:include page="../include/footer.jsp" />
+	
+	<jsp:include page="./include/footer.jsp" />
 </div>
 </body>
+<script src="./resources/js/signup.js"></script>
+
+<script>
+const regResult = "${regResult}";
+if (regResult === "OK") {
+	alert("회원가입 성공! 로그인해주세요!");
+}
+</script>
+
 </html>
