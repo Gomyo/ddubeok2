@@ -16,23 +16,28 @@
             <li class="nav-item active">
             	<a class="nav-link" href="/ddubeok2/home.do">홈</a>
             </li>
-            <li class="nav-item active">
+            <li class="nav-item">
             	<a class="nav-link" href="/ddubeok2/notice.do">공지사항</a>
             </li>
             <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-toggle="dropdown"
+                <a class="nav-link dropdown-toggle" id="navbarDropdownRegion" role="button" data-toggle="dropdown"
                     aria-haspopup="true" aria-expanded="false">
                     	여행지 추천
                 </a>
-                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                    <a class="dropdown-item" href="#">서울</a>
-                    <a class="dropdown-item" href="#">경기</a>
-                    <a class="dropdown-item" href="#">부산</a>
-                    <a class="dropdown-item" href="#">충청</a>
-                    <a class="dropdown-item" href="#">전라</a>
-                    <a class="dropdown-item" href="#">경상</a>
-                    <a class="dropdown-item" href="#">제주</a>
-                </div>
+                <ul class="dropdown-menu" aria-labelledby="navbarDropdownRegion">
+                    <li class="dropdown-submenu"><a class="dropdown-item dropdown-toggle" href="#">서울</a>
+	                    	<ul class="dropdown-menu">
+	                    		<li><a class="dropdown-item" href="#">강남구</a></li>
+	                    		<li><a class="dropdown-item" href="#">서초구</a></li>
+	                    	</ul>
+                    </li>
+                    <li><a class="dropdown-item" href="#">경기</a></li>
+                    <li><a class="dropdown-item" href="#">부산</a></li>
+                    <li><a class="dropdown-item" href="#">충청</a></li>
+                    <li><a class="dropdown-item" href="#">전라</a></li>
+                    <li><a class="dropdown-item" href="#">경상</a></li>
+                    <li><a class="dropdown-item" href="#">제주</a></li>
+                </ul>
             </li>
             <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-toggle="dropdown"
@@ -68,7 +73,7 @@
 </nav>
 
 <!-- signup modal Start -->
-<div class="modal fade" id="signupModal">
+<div class="modal fade" id="signupModal" data-backdrop="static">
 	<div class="modal-dialog">
 		<div class="modal-content">
 		
@@ -81,27 +86,31 @@
 			
 			<!-- Modal body -->
 			<div class="modal-body">
-				<form id="user-signup">
+				<form action="./register" class="user-signup" id="signup-form" method="post">
 					<div class="form-group">
 						<label for="signup-user-id" class="col-form-label">아이디를 입력해주세요.</label>
 						<span id="signup-user-id-result"></span>
-						<input type="text" placeholder="아이디를 입력해주세요." class="form-control" name="id" id="signup-user-id">
+						<input type="text" placeholder="아이디를 입력해주세요." class="form-control" name="account" id="signup-user-id">
 					</div>
 					<div class="form-group">
-						<label for="signup-user-password" class="col-form-label">비밀번호를 입력해주세요.</label> 
+						<label for="signup-user-password" class="col-form-label">비밀번호를 입력해주세요.</label>
+						<span id="signup-user-password-result"></span>
 						<input type="password" placeholder="8자리 이상(영어 대문자, 소문자, 숫자, 특수문자 중 3종류 조합)" 
 							class="form-control" name="password" id="signup-user-password">
 					</div>
 					<div class="form-group">
-						<label for="signup-user-password2" class="col-form-label">비밀번호를 확인해주세요.</label> 
+						<label for="signup-user-password2" class="col-form-label">비밀번호를 확인해주세요.</label>
+						<span id="signup-user-password2-result"></span>
 						<input type="password" placeholder="비밀번호 재입력" class="form-control" name="password2" id="signup-user-password2">
 					</div>
 					<div class="form-group">
-						<label for="signup-user-name" class="col-form-label">이름을 입력해주세요.</label> 
-						<input type="text" placeholder="뚜벅이" class="form-control" name="name" id="signup-user-name">
+						<label for="signup-user-nickname" class="col-form-label">닉네임을 입력해주세요.</label>
+						<span id="signup-user-nickname-result"></span>
+						<input type="text" placeholder="뚜벅이" class="form-control" name="nickname" id="signup-user-nickname">
 					</div>
 					<div class="form-group">
-						<label for="signup-user-email" class="col-form-label">이메일을 입력해주세요.</label> 
+						<label for="signup-user-email" class="col-form-label">이메일을 입력해주세요.</label>
+						<span id="signup-user-email-result"></span>
 						<input type="text" placeholder="tour@tour.com" class="form-control" name="email" id="signup-user-email">
 					</div>
 				</form>
@@ -109,15 +118,15 @@
 			
 			<!-- Modal footer -->
 			<div class="modal-footer">
-				<button type="button" class="btn btn-default" data-dismiss="modal">닫기</button>
-				<a type="button" href="/ddubeok2/home.do" class="btn-signup btn btn-primary">회원가입</a>
+				<button type="button" class="btn-close btn btn-secondary" data-dismiss="modal">닫기</button>
+				<button type="button" class="btn-signup btn btn-primary" id="signup-btn">회원가입</button>
 			</div>
 		</div>
 	</div>
 </div>
 
-<!-- login modal Start -->
-<div class="modal fade" id="loginModal">
+<!-- signin modal Start -->
+<div class="modal fade" id="loginModal" data-backdrop="static">
 	<div class="modal-dialog">
 		<div class="modal-content">
 
@@ -130,17 +139,13 @@
 
 			<!-- Modal body -->
 			<div class="modal-body">
-				<form class="form-login">
+				<form action="./login" id="signin-from" class="form-signin" method="post">
 					<div class="form-group">
-						<label for="login-user-id" class="col-form-label">아이디</label> 
-						<input type="text" id="login-user-id" name="id" class="form-control" placeholder="아이디" required> 
-						<label for="login-user-password" class="col-form-label">비밀번호</label> 
-						<input type="password" id="login-user-password" name="password" class="form-control" placeholder="비밀번호" required>
-
-						<div class="checkbox">
-							<label for="login-remember" class="col-form-label"> 
-							<input type="checkbox" value="remember-id-authentication"> 아이디 기억하기</label>
-						</div>
+						<label for="signin-user-id" class="col-form-label">아이디</label> 
+						<input type="text" id="signin-user-id" name="account" class="form-control" placeholder="아이디" required> 
+						<label for="signin-user-password" class="col-form-label">비밀번호</label> 
+						<input type="password" id="signin-user-password" name="password" class="form-control" placeholder="비밀번호" required>
+						<br>
 						<button class="btn btn-lg btn-primary btn-block" id="btnLogin" type="submit">로그인</button>
 					</div>
 				</form>
@@ -148,7 +153,7 @@
 			
 			<!-- Modal footer -->
 			<div class="modal-footer">
-				<button type="button" class="btn btn-default" data-dismiss="modal">닫기</button>
+				<button type="button" class="btn-close btn btn-secondary" data-dismiss="modal">닫기</button>
 				<button type="button" data-dismiss="modal" class="btn btn-primary" data-toggle="modal" data-target="#signupModal">회원가입</button>
 			</div>
 		</div>
