@@ -25,18 +25,40 @@
                     	여행지 추천
                 </a>
                 <ul class="dropdown-menu" aria-labelledby="navbarDropdownRegion">
-                    <li class="dropdown-submenu"><a class="dropdown-item dropdown-toggle" href="#">서울</a>
+                    <li><a class="dropdown-item" href="#">서울</a></li>
+                    
+                    <li><a class="dropdown-item" href="#">경기</a></li>
+                    <li><a class="dropdown-item" href="#">강원</a></li>
+                    <li><a class="dropdown-item" href="#">부산</a></li>
+                    <li class="dropdown-submenu"><a class="dropdown-item dropdown-toggle" href="#">충청</a>
 	                    	<ul class="dropdown-menu">
-	                    		<li><a class="dropdown-item" href="#">강남구</a></li>
-	                    		<li><a class="dropdown-item" href="#">서초구</a></li>
+	                    		<li><a class="dropdown-item" href="#">충청북도</a></li>
+	                    		<li><a class="dropdown-item" href="#">충청남도</a></li>
 	                    	</ul>
                     </li>
-                    <li><a class="dropdown-item" href="#">경기</a></li>
-                    <li><a class="dropdown-item" href="#">부산</a></li>
-                    <li><a class="dropdown-item" href="#">충청</a></li>
-                    <li><a class="dropdown-item" href="#">전라</a></li>
-                    <li><a class="dropdown-item" href="#">경상</a></li>
+                    <li class="dropdown-submenu"><a class="dropdown-item dropdown-toggle" href="#">경상</a>
+	                    	<ul class="dropdown-menu">
+	                    		<li><a class="dropdown-item" href="#">경상북도</a></li>
+	                    		<li><a class="dropdown-item" href="#">경상남도</a></li>
+	                    	</ul>
+                    </li>
+                    <li class="dropdown-submenu"><a class="dropdown-item dropdown-toggle" href="#">전라</a>
+	                    	<ul class="dropdown-menu">
+	                    		<li><a class="dropdown-item" href="#">전라북도</a></li>
+	                    		<li><a class="dropdown-item" href="#">전라남도</a></li>
+	                    	</ul>
+                    </li>
                     <li><a class="dropdown-item" href="#">제주</a></li>
+                    <li class="dropdown-submenu"><a class="dropdown-item dropdown-toggle" href="#">기타</a>
+	                    	<ul class="dropdown-menu">
+	                    		<li><a class="dropdown-item" href="#">인천광역시</a></li>
+	                    		<li><a class="dropdown-item" href="#">대전광역시</a></li>
+	                    		<li><a class="dropdown-item" href="#">대구광역시</a></li>
+	                    		<li><a class="dropdown-item" href="#">광주광역시</a></li>
+	                    		<li><a class="dropdown-item" href="#">울산광역시</a></li>
+	                    		<li><a class="dropdown-item" href="#">세종특별시</a></li>
+	                    	</ul>
+                    </li>
                 </ul>
             </li>
             <li class="nav-item dropdown">
@@ -67,7 +89,7 @@
 			<a type="button" class="btn btn-default" data-toggle="modal"
 					data-target="#myInfo">내 정보</a>
 			<a type="button" class="btn btn-default" data-toggle="modal"
-						data-target="#logout">로그아웃</a>
+						data-target="#logoutModal">로그아웃</a>
 		</c:if>
     </div>
 </nav>
@@ -86,7 +108,7 @@
 			
 			<!-- Modal body -->
 			<div class="modal-body">
-				<form action="./register" class="user-signup" id="signup-form" method="post">
+				<form action="./register" method="post">
 					<div class="form-group">
 						<label for="signup-user-id" class="col-form-label">아이디를 입력해주세요.</label>
 						<span id="signup-user-id-result"></span>
@@ -139,7 +161,7 @@
 
 			<!-- Modal body -->
 			<div class="modal-body">
-				<form action="./login" id="signin-from" class="form-signin" method="post">
+				<form action="./login" method="post">
 					<div class="form-group">
 						<label for="signin-user-id" class="col-form-label">아이디</label> 
 						<input type="text" id="signin-user-id" name="account" class="form-control" placeholder="아이디" required> 
@@ -155,6 +177,32 @@
 			<div class="modal-footer">
 				<button type="button" class="btn-close btn btn-secondary" data-dismiss="modal">닫기</button>
 				<button type="button" data-dismiss="modal" class="btn btn-primary" data-toggle="modal" data-target="#signupModal">회원가입</button>
+			</div>
+		</div>
+	</div>
+</div>
+
+<!-- logout modal Start -->
+<div class="modal fade" id="logoutModal">
+	<div class="modal-dialog">
+		<div class="modal-content">
+
+			<!-- Modal Header -->
+			<div class="modal-header">
+				&nbsp;&nbsp; &nbsp;&nbsp;
+				<h4 class="modal-title">로그아웃</h4>
+				<button type="button" class="close" data-dismiss="modal">×</button>
+			</div>
+
+			<!-- Modal body -->
+			<div class="modal-body">
+				로그아웃 하시겠습니까?
+			</div>
+			
+			<!-- Modal footer -->
+			<div class="modal-footer">
+				<button type="button" class="btn-close btn btn-secondary" data-dismiss="modal">닫기</button>
+				<a type="button" class="btn btn-primary" href="./logout">로그아웃</a>
 			</div>
 		</div>
 	</div>

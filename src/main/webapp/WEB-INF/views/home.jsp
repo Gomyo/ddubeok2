@@ -51,6 +51,15 @@ const regResult = "${regResult}";
 if (regResult === "OK") {
 	alert("회원가입 성공! 로그인해주세요!");
 }
+
+const loginResult = "${loginResult}";
+if (loginResult === "success") {
+	alert("로그인 성공! 어서오세요!");
+} else if(loginResult === "idFail"){
+	alert("로그인 실패! 아이디를 확인해주세요!");
+} else if(loginResult === "pwFail"){
+	alert("로그인 실패!비밀번호를 확인해주세요!");
+}
 </script>
 
 </html>

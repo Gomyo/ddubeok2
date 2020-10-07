@@ -51,8 +51,9 @@ public class TravelUserController {
 		BCryptPasswordEncoder encoder = new BCryptPasswordEncoder();
 		if(user != null) {
 			if(encoder.matches(request.getParameter("password"), user.getPassword())) {
-				session.setAttribute("user", user);
+				session.setAttribute("loginUser", user);
 				mv.addObject("user", user);
+				mv.addObject("loginResult", "success");
 			} else {
 				mv.addObject("loginResult", "pwFail");
 			}			
@@ -61,6 +62,18 @@ public class TravelUserController {
 		}
 		mv.setViewName("home");
 		return mv;
+	}
+	
+	@GetMapping("/logout")
+	public ModelAndView logout(HttpServletRequest request) {
+		HttpSession session = request.getSession();
+		TravelUser user = (TravelUser)session.getAttribute("loginUser");
+		
+		if(user != null) {
+			session.removeAttribute("loginUser");
+			session.invalidate();
+		}		
+		return new ModelAndView("home");
 	}
 	
 }
