@@ -14,10 +14,10 @@
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav mr-auto">
             <li class="nav-item active">
-            	<a class="nav-link" href="/ddubeok2/home.do">홈</a>
+            	<a class="nav-link" href="./">홈</a>
             </li>
             <li class="nav-item">
-            	<a class="nav-link" href="/ddubeok2/notice.do">공지사항</a>
+            	<a class="nav-link" href="./notice">공지사항</a>
             </li>
             <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" id="navbarDropdownRegion" role="button" data-toggle="dropdown"

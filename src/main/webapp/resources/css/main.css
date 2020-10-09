@@ -7,6 +7,7 @@
 	font-weight: normal;
 	font-style: normal;
 }
+@font-face { font-family: 'Eoe_Zno_L'; src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_eight@1.0/Eoe_Zno_L.woff') format('woff'); font-weight: normal; font-style: normal; }
 
 /* common */
 html, body {
@@ -30,19 +31,38 @@ html, body {
 .main-content {
 	flex: 1;
 }
-
-.Maininfo {
-	margin-top: 5px;
+.main-content > .width-module {
+	display: flex;
+	align-items: center;
 }
+.main-content > .width-module > .mainInfo {
+	width: 40%;
+	float: left;
+	margin-top: 270px;
+}
+.landing-fo-section {background-color: #f9f7f6; display: flex; font-family: Eoe_Zno_L;}
+.landing-fo-section > .width-module {width: 60%; margin: 20px auto;}
+.landing-fo-section > .width-module > .tourInfo {text-align: center; padding:40px 0 0 0;}
+.landing-fo-section > .width-module > .tourInfo > div.textSection > h2 {font-weight: normal;}
+.landing-fo-section > .width-module > .tourInfo > div.textSection > span {margin-top:22px;}
+.landing-fo-section > .width-module > .tourInfo > div.imageSection > div > img {width:60%; margin-top:20px;}
+
+.landing-fo-section > .width-module > .tourInfo {display:flex; align-items: center;}
+.landing-fo-section > .width-module > .tourInfo > div {width:50%;}
+
+.landing-fo-section > .tourInfo > div > div {}
+.landing-fo-section > .tourInfo > div > div.textSection {width:40%;float:left; margin-top:270px; padding-right:50px;}
+.landing-fo-section > .tourInfo > div > div.textSection > h3 {font-size:30px;}
+.landing-fo-section > .tourInfo > div > div.textSection > span {font-size:20px;}
+.landing-fo-section > .tourInfo > div > div.imageSection {width:30%;float:left;padding:30px;}
+.landing-fo-section > .tourInfo > div > div.imageSection > div > img {height:10%;}
 
 /* header */
-
 nav {
 	font-family: 'GmarketSansMedium';
 }
 
 /* navbar submenu hover */
-
 .navbar-nav li:hover > ul.dropdown-menu {
     display: block;
 }
@@ -67,12 +87,6 @@ nav {
 }
 
 /* footer */
-.footer {
+.footer-contact {
 	font-family: 'GmarketSansMedium';
-	font-size: 12px;
-	width: 100%;
-	height: 70px;
-	position: relative;
-	bottom: 0;
-	color: black;
 }
