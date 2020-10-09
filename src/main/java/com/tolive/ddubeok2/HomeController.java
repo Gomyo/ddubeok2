@@ -14,4 +14,12 @@ public class HomeController {
 	public String home(Locale locale, Model model) {
 		return "home";
 	}
+	@RequestMapping(value = "/notice", method = RequestMethod.GET)
+	public String notice(Locale locale, Model model) {
+		return "notice";
+	}
+	@RequestMapping(value = "/about", method = RequestMethod.GET)
+	public String about(Locale locale, Model model) {
+		return "about";
+	}
 }
