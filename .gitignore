@@ -119,5 +119,7 @@ $RECYCLE.BIN/
 # Windows shortcuts
 *.lnk
 
-# End of https://www.toptal.com/developers/gitignore/api/eclipse,windows,java
-
+# 보안
+src/main/webapp/WEB-INF/views/main/list.jsp
+src/main/resources/spring/root-context.xml
+src/main/resources/spring/servlet-context.xml
