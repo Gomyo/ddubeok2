@@ -86,10 +86,8 @@
 		</c:if>
 		<!-- 로그인한 경우 메인 페이지 -->
 		<c:if test="${not empty loginUser}">
-			<a type="button" class="btn btn-default" data-toggle="modal"
-					data-target="#myInfo">내 정보</a>
-			<a type="button" class="btn btn-default" data-toggle="modal"
-						data-target="#logoutModal">로그아웃</a>
+			<a type="button" class="btn btn-default" href="/free/test5">내 정보</a>
+			<a type="button" class="btn btn-default" data-toggle="modal" data-target="#logoutModal">로그아웃</a>
 		</c:if>
     </div>
 </nav>
