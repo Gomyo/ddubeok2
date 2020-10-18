@@ -4,7 +4,7 @@
 
 <!-- navbar -->
 <nav class="navbar navbar-expand-lg navbar-light" style="background-color: #FFFFFF;">
-    <img src="./resources/image/icon-walking.png" style="width:30px; height:30px" alt="뚜벅이 로고">
+    <img src="/resources/image/icon-walking.png" style="width:30px; height:30px" alt="뚜벅이 로고">
     <a class="navbar-brand" href="/ddubeok2/home.do">DDUBEOK2</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
         aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -14,21 +14,21 @@
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav mr-auto">
             <li class="nav-item active">
-            	<a class="nav-link" href="./">홈</a>
+            	<a class="nav-link" href="/">홈</a>
             </li>
             <li class="nav-item">
-            	<a class="nav-link" href="./notice">공지사항</a>
+            	<a class="nav-link" href="/notice/list">공지사항</a>
             </li>
             <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" id="navbarDropdownRegion" role="button" data-toggle="dropdown"
+                <a class="nav-link dropdown-toggle" href="/main/list" id="navbarDropdownRegion" role="button" data-toggle="dropdown"
                     aria-haspopup="true" aria-expanded="false">
                     	여행지 추천
                 </a>
                 <ul class="dropdown-menu" aria-labelledby="navbarDropdownRegion">
-                    <li><a class="dropdown-item" href="#">서울</a></li>
+                    <li><a class="dropdown-item" href="/main/list">서울</a></li>
                     
-                    <li><a class="dropdown-item" href="#">경기</a></li>
-                    <li><a class="dropdown-item" href="#">강원</a></li>
+                    <li><a class="dropdown-item" href="/main/list">경기</a></li>
+                    <li><a class="dropdown-item" href="/main/list">강원</a></li>
                     <li><a class="dropdown-item" href="#">부산</a></li>
                     <li class="dropdown-submenu"><a class="dropdown-item dropdown-toggle" href="#">충청</a>
 	                    	<ul class="dropdown-menu">
@@ -67,9 +67,9 @@
                     	커뮤니티
                 </a>
                 <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                    <a class="dropdown-item" href="/ddubeok2/free_board.do">자유게시판</a>
+                    <a class="dropdown-item" href="/free/list">자유게시판</a>
                     <div class="dropdown-divider"></div>
-                    <a class="dropdown-item" href="#">후기게시판</a>
+                    <a class="dropdown-item" href="/post/list">후기게시판</a>
                 </div>
             </li>
             
@@ -108,7 +108,7 @@
 			
 			<!-- Modal body -->
 			<div class="modal-body">
-				<form action="./register" method="post">
+				<form action="/register" class="user-signup" id="signup-form" method="post">
 					<div class="form-group">
 						<label for="signup-user-id" class="col-form-label">아이디를 입력해주세요.</label>
 						<span id="signup-user-id-result"></span>
@@ -133,7 +133,7 @@
 					<div class="form-group">
 						<label for="signup-user-email" class="col-form-label">이메일을 입력해주세요.</label>
 						<span id="signup-user-email-result"></span>
-						<input type="text" placeholder="tour@tour.com" class="form-control" name="email" id="signup-user-email">
+						<input type="text" placeholder="비밀번호 찾기시 필요하니 정확히 입력해주세요." class="form-control" name="email" id="signup-user-email">
 					</div>
 				</form>
 			</div>
@@ -161,7 +161,7 @@
 
 			<!-- Modal body -->
 			<div class="modal-body">
-				<form action="./login" method="post">
+				<form action="/login" id="signin-from" class="form-signin" method="post">
 					<div class="form-group">
 						<label for="signin-user-id" class="col-form-label">아이디</label> 
 						<input type="text" id="signin-user-id" name="account" class="form-control" placeholder="아이디" required> 
@@ -175,7 +175,7 @@
 			
 			<!-- Modal footer -->
 			<div class="modal-footer">
-				<button type="button" class="btn-close btn btn-secondary" data-dismiss="modal">닫기</button>
+				<button type="button" class="btn btn btn-secondary" onclick="location.href='/free/test4';">아이디 / 비밀번호 찾기</button>
 				<button type="button" data-dismiss="modal" class="btn btn-primary" data-toggle="modal" data-target="#signupModal">회원가입</button>
 			</div>
 		</div>
@@ -202,7 +202,7 @@
 			<!-- Modal footer -->
 			<div class="modal-footer">
 				<button type="button" class="btn-close btn btn-secondary" data-dismiss="modal">닫기</button>
-				<a type="button" class="btn btn-primary" href="./logout">로그아웃</a>
+				<a type="button" class="btn btn-primary" href="/logout">로그아웃</a>
 			</div>
 		</div>
 	</div>
