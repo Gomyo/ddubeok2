@@ -125,3 +125,4 @@ src/main/webapp/resources/spring/appServlet/servlet-context.xml
 src/main/webapp/resources/spring/root-context.xml
 src/main/resources/spring/root-context.xml
 src/main/resources/spring/servlet-context.xml
+src/main/webapp/resources/main/list.jsp
