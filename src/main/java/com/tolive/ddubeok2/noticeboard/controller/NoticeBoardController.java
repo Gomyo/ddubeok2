@@ -11,6 +11,7 @@ import org.springframework.web.servlet.ModelAndView;
 import com.tolive.ddubeok2.noticeboard.service.INoticeBoardService;
 
 @Controller
+@RequestMapping("/notice")
 public class NoticeBoardController {
 	
 	@Autowired
@@ -19,13 +20,12 @@ public class NoticeBoardController {
 	@GetMapping("/list")
 	public ModelAndView list() {
 		
-		return new ModelAndView("/notice/notice");
+		return new ModelAndView("notice/notice");
 	}
 	
 	@GetMapping("/write")
 	public ModelAndView writeGet() {
-		
-		return null;
+		return new ModelAndView("notice/write");
 	}
 	
 	@PostMapping("/write")
