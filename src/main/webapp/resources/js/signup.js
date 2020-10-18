@@ -31,8 +31,8 @@ $(function() {
 		}
 		else {
 			const account = $(this).val();
-			$.ajax({
-				url : './check?kind=account&info=' + account,
+			$.ajax({ 
+				url : '/check?kind=account&info=' + account,
 				type : 'GET',
 				dataType: 'text',
 				success : function(result) {
@@ -104,7 +104,7 @@ $(function() {
 		else {
 			const nickname = $(this).val();
 			$.ajax({
-				url : './check?kind=nickname&info=' + nickname,
+				url : '/check?kind=nickname&info=' + nickname,
 				type : 'GET',
 				dataType: 'text',
 				success : function(result) {
@@ -139,7 +139,7 @@ $(function() {
 		else {
 			const email = $(this).val();
 			$.ajax({
-				url : './check?kind=email&info=' + email,
+				url : '/check?kind=email&info=' + email,
 				type : 'GET',
 				dataType: 'text',
 				success : function(result) {
