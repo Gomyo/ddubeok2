@@ -17,7 +17,6 @@
 
 
 .notice_text {
-    
     border: 1px solid black;
     top: 50px;
     left: 600px;
@@ -58,3 +57,5 @@
 	-ms-transform: scale(1.1);
 	-o-transform: scale(1.1);
 }
+
+
