@@ -1,10 +1,6 @@
 package com.tolive.ddubeok2.traveluser.domain;
 
-import lombok.Getter;
-import lombok.Setter;
 
-@Setter
-@Getter
 public class TravelUser {
 	
 	private String account;

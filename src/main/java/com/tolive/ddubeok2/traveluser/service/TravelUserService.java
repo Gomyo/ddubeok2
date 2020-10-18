@@ -44,4 +44,13 @@ public class TravelUserService implements ITravelUserService {
 		return userMapper.getUserInfo(account);
 	}
 
+	@Override
+	public void changePw(TravelUser user) {
+		String rawPw = user.getPassword();
+		BCryptPasswordEncoder encoder = new BCryptPasswordEncoder();
+		String encodedPw = encoder.encode(rawPw);
+		user.setPassword(encodedPw);
+		userMapper.changePw(user);
+	}
+
 }
