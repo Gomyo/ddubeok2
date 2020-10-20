@@ -12,11 +12,11 @@
 <script	src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCUS4S0e7nP9LF75NjJLe6SdkiiqgKWE94&region=KR&callback=initMap" async defer></script>
 <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
 <script src="https://unpkg.com/@google/markerclustererplus@4.0.1/dist/markerclustererplus.min.js"></script>
-<script src="/resources/js/jquery.min.js"></script>
-<link href="/resources/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-<script src="/resources/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-<link rel="stylesheet" href="/resources/css/tourlist.css">
-<link rel="stylesheet" href="/resources/css/tourlistmain.css">
+<script src="/ddubeok2/resources/js/jquery.min.js"></script>
+<link href="/ddubeok2/resources/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+<script src="/ddubeok2/resources/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+<link rel="stylesheet" href="/ddubeok2/resources/css/tourlist.css">
+<link rel="stylesheet" href="/ddubeok2/resources/css/tourlistmain.css">
 <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
 <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
 <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
@@ -229,11 +229,11 @@ function getInfo(){
 					var addr2=data[i].addr2;
 					var img = data[i].img;
 					if(img == null || img.trim() == ''){
-						img = '/resources/image/default.jpg';
+						img = '/ddubeok2/resources/image/default.jpg';
 					}
 					var img2 = data[i].img2;
 					if(img2 == null || img2.trim() == ''){
-						img2 = '/resources/image/default.jpg';
+						img2 = '/ddubeok2/resources/image/default.jpg';
 					}
 					var contentsType = data[i].contenttype; 
 					var ctype='';
@@ -327,11 +327,11 @@ function initMap2(data) {
 			
 		var img = data[i].img;
 		if(img == null || img.trim() == ''){
-			img = '/resources/image/default.jpg';
+			img = '/ddubeok2/resources/image/default.jpg';
 		}
 		var img2 = data[i].img2;
 		if(img2 == null || img2.trim() == ''){
-			img2 = '/resources/image/default.jpg';
+			img2 = '/ddubeok2/resources/image/default.jpg';
 		}
 		var position = {
 			lat : mapy,
@@ -390,7 +390,7 @@ function weather(mapx,mapy) {
 				var description=data.list[i].weather[0].description;//안써도될것같다.
 				weather +="<tr>";
 				weather +="<td>";
-				weather +="<img src='/resources/weatherIcons/"+icon+".png'>";
+				weather +="<img src='/ddubeok2/resources/weatherIcons/"+icon+".png'>";
 				weather +="</td>";
 				weather +="<td>";
 				weather +="날짜 : "+date+"\n";

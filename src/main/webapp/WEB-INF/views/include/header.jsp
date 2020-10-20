@@ -4,8 +4,8 @@
 
 <!-- navbar -->
 <nav class="navbar navbar-expand-lg navbar-light" style="background-color: #FFFFFF;">
-    <img src="/resources/image/icon-walking.png" style="width:30px; height:30px" alt="뚜벅이 로고">
-    <a class="navbar-brand" href="/">DDUBEOK2</a>
+    <img src="/ddubeok2/resources/image/icon-walking.png" style="width:30px; height:30px" alt="뚜벅이 로고">
+    <a class="navbar-brand" href="/ddubeok2">DDUBEOK2</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
         aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
@@ -14,13 +14,13 @@
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav mr-auto">
             <li class="nav-item active">
-            	<a class="nav-link" href="/">홈</a>
+            	<a class="nav-link" href="/ddubeok2">홈</a>
             </li>
             <li class="nav-item">
-            	<a class="nav-link" href="/notice/list">공지사항</a>
+            	<a class="nav-link" href="/ddubeok2/notice/list">공지사항</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="/main/list">여행지 추천</a>
+                <a class="nav-link" href="/ddubeok2/main/list">여행지 추천</a>
             </li>
             <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-toggle="dropdown"
@@ -28,9 +28,9 @@
                     	커뮤니티
                 </a>
                 <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                    <a class="dropdown-item" href="/free/list">자유게시판</a>
+                    <a class="dropdown-item" href="/ddubeok2/free/list">자유게시판</a>
                     <div class="dropdown-divider"></div>
-                    <a class="dropdown-item" href="/post/list">후기게시판</a>
+                    <a class="dropdown-item" href="/ddubeok2/post/list">후기게시판</a>
                 </div>
             </li>
             
@@ -41,14 +41,14 @@
         <!-- 로그인하지 않은 경우 메인 페이지 -->
         <c:if test="${empty loginUser}">
 	        <a type="button" class="btn btn-default" data-toggle="modal"
-					data-target="#signupModal">회원가입</a>
+					data-target="#signupModal" id="signup">회원가입</a>
 			<a type="button" class="btn btn-default" data-toggle="modal"
-						data-target="#loginModal">로그인</a>
+						data-target="#loginModal" id="signin">로그인</a>
 		</c:if>
 		<!-- 로그인한 경우 메인 페이지 -->
 		<c:if test="${not empty loginUser}">
-			<a type="button" class="btn btn-default" href="/free/test5">내 정보</a>
-			<a type="button" class="btn btn-default" data-toggle="modal" data-target="#logoutModal">로그아웃</a>
+			<a type="button" class="btn btn-default" data-toggle="modal" data-target="#logoutModal" id="logout" style="float:right; border:0px;">로그아웃</a>
+			<a type="button" class="btn btn-default" href="/ddubeok2/free/test5" id="myinfo" style="float:right; border: 0px;">내 정보</a>
 		</c:if>
     </div>
 </nav>
@@ -67,7 +67,7 @@
 			
 			<!-- Modal body -->
 			<div class="modal-body">
-				<form action="/register" class="user-signup" id="signup-form" method="post">
+				<form action="/ddubeok2/register" class="user-signup" id="signup-form" method="post">
 					<div class="form-group">
 						<label for="signup-user-id" class="col-form-label">아이디를 입력해주세요.</label>
 						<span id="signup-user-id-result"></span>
@@ -120,7 +120,7 @@
 
 			<!-- Modal body -->
 			<div class="modal-body">
-				<form action="/login" id="signin-from" class="form-signin" method="post">
+				<form action="/ddubeok2/login" id="signin-from" class="form-signin" method="post">
 					<div class="form-group">
 						<label for="signin-user-id" class="col-form-label">아이디</label> 
 						<input type="text" id="signin-user-id" name="account" class="form-control" placeholder="아이디" required> 
@@ -173,7 +173,7 @@
 		$("#sendAccountBtn").click(function() {
 			$.ajax({
 				type : 'POST',
-				url : '/mail/findAccount',
+				url : '/ddubeok2/mail/findAccount',
 				dataType: 'text',
 				data : {email : $("#find_account_email").val()},
 				success : function(result) {
@@ -207,8 +207,8 @@
 					<label for="account_input" class="col-form-label">아이디를 입력해주세요.</label>
                     <span id="signup-user-id-result"></span>
                     <div style="width: 100%; display:flex;">
-	                    <input type="text" placeholder="가입하신 아이디를 적어주세요" class="form-control" name="find_password_account" id="find_password_account" style="width: 300px;"><br>
-	                    <button class="btn btn-primary" onclick="send_account()" style="float:right; maring-left:20px;">인증번호 보내기</button>
+	                    <input type="text" placeholder="가입하신 아이디를 적어주세요" class="form-control" name="find_password_account" id="find_password_account" style="width: 300px;"><br><hr>
+	                    <button class="btn btn-primary" onclick="send_account()" style="float:right; maring-right:20px; ">인증번호 보내기</button>
                 	</div>
                 	<label for="email_input" class="col-form-label">인증번호를 입력해주세요.</label>
                 	<span id="signup-user-id-result"></span>
@@ -227,7 +227,7 @@ function send_account() {
 	if($("#find_password_account").val().trim() != '') {
 		$.ajax({
 			type : 'POST',
-			url : '/mail/findPassword',
+			url : '/ddubeok2/mail/findPassword',
 			dataType: 'text',
 			data : {account : $("#find_password_account").val()},
 			success : function(result) {
@@ -251,7 +251,7 @@ function check_password() {
 	if($("#find_password_check").val().trim() != '') {
 		$.ajax({
 			type : 'POST',
-			url : '/mail/check',
+			url : '/ddubeok2/mail/check',
 			dataType: 'text',
 			data : {
 				account : $("#find_password_account").val(),
@@ -288,7 +288,7 @@ function check_password() {
 			
 			<!-- Modal body -->
 			<div class="modal-body">
-				<form action="/changePw" class="user-change" id="change-form" method="post">
+				<form action="/ddubeok2/changePw" class="user-change" id="change-form" method="post">
 					<div class="form-group">
 						<label for="change-user-password" class="col-form-label">비밀번호를 입력해주세요.</label>
 							<span id="change-user-password-result"></span>
@@ -379,7 +379,7 @@ $(function() {
 			<!-- Modal footer -->
 			<div class="modal-footer">
 				<button type="button" class="btn-close btn btn-secondary" data-dismiss="modal">닫기</button>
-				<a type="button" class="btn btn-primary" href="/logout">로그아웃</a>
+				<a type="button" class="btn btn-primary" href="/ddubeok2/logout">로그아웃</a>
 			</div>
 		</div>
 	</div>

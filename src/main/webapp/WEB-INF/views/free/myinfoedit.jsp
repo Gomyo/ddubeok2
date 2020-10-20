@@ -14,7 +14,7 @@
 
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-<link rel="stylesheet" href="/resources/css/main.css">
+<link rel="stylesheet" href="/ddubeok2/resources/css/main.css">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
@@ -45,7 +45,7 @@ function editInfo() {
 		return false;
 	} else{
 		alert("정보 변경이 성공적으로 완료되었습니다.");
-		location.href = "/";
+		location.href = "/ddubeok2";
 		return true;
 
 	}
@@ -57,10 +57,10 @@ function editInfo() {
 
 </head>
 <body>
-<div class="wrap" style="width:100%">
+<div class="wrap" style="width:100%;">
 	<jsp:include page="../include/header.jsp" />
 	<!-- Main Page -->
-	<div class="main-content" style="width:100%; background-image: url('/resources/image/maldives.jpg')">
+	<div class="main-content" style=" background-size: 100% 100%; background-image: url('/ddubeok2/resources/image/maldives.jpg'); ">
 		
 		<div style=" width:577px; height:425px; background-color:black; opacity:60%; position:absolute; margin-left:35%; margin-top:12%; border-radius:14px;" ></div>
 		
@@ -70,7 +70,7 @@ function editInfo() {
 				<h1 style="color:white; margin-right: 25px;">내 정보 수정</h1><br>
             <div class="id_box" style="padding-bottom: 10px;">
                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<label for="">아이디 : </label>
-                <input type="text" placeholder="abcde123">
+                <input type="text" value="${loginUser.account}" disabled>
             </div>
 
             <div class="pw_box" style="padding-bottom: 10px;">
@@ -96,7 +96,7 @@ function editInfo() {
             </div>
             
             <div class="apply_edit">
-                <button class="btn btn-primary" type="submit" style="float: right; margin-right:15%;" onclick="editInfo()">수정</button> 
+                <button  class="btn btn-secondary" type="submit" style="float: right; margin-right:15%;" onclick="editInfo()">수정</button> 
             </div>
             
         </div>
@@ -107,10 +107,11 @@ function editInfo() {
 		
 	</div>
 	
-	<jsp:include page="../include/footer.jsp" />
+	
 </div>
+<jsp:include page="../include/footer.jsp" />
 </body>
-<script src="/resources/js/signup.js"></script>
+<script src="/ddubeok2/resources/js/signup.js"></script>
 
 <script>
 const regResult = "${regResult}";

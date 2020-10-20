@@ -166,7 +166,7 @@ function wishList(){
 		
 		var nickname = '${loginUser.nickname}';
 		$.ajax({
-			url:'/main/wish',
+			url:'/ddubeok2/main/wish',
 			type:'get',
 			dataType:'text',
 			data:{
@@ -240,7 +240,7 @@ function initMap() {
 }
 function getAreaCode(){
 	$.ajax({
-		url:'/main/getAreacode',
+		url:'/ddubeok2/main/getAreacode',
 		type:'get',
 		dataType:'json',
 		success:function(data){
@@ -255,7 +255,7 @@ function getAreaCode(){
 				var areacode= $('#areacode option:selected').val();
 				//시군구 정보 - 도의 선택에 따라 바뀜
 				$.ajax({ 						
-					url: '/main/getSigungucode',
+					url: '/ddubeok2/main/getSigungucode',
 					data:{
 						areacode:areacode
 					},
@@ -292,7 +292,7 @@ function getInfo(){
 		sigungucode ="40";	
 	}
 	$.ajax({ 
-		url: '/main/data',
+		url: '/ddubeok2/main/data',
 		data:{
 			areacode : areacode, //지역 코드 도 단위 
 			sigungucode : sigungucode, //시군구 코드
@@ -315,11 +315,11 @@ function getInfo(){
 					var addr2=data[i].addr2;
 					var img = data[i].img;
 					if(img == null || img.trim() == ''){
-						img = '/resources/image/default.jpg';
+						img = '/ddubeok2/resources/image/default.jpg';
 					}
 					var img2 = data[i].img2;
 					if(img2 == null || img2.trim() == ''){
-						img2 = '/resources/image/default.jpg';
+						img2 = '/ddubeok2/resources/image/default.jpg';
 					}
 					var contentsType = data[i].contenttype; 
 					var ctype='';
@@ -411,11 +411,11 @@ function initMap2(data) {
 			
 		var img = data[i].img;
 		if(img == null || img.trim() == ''){
-			img = '/resources/image/default.jpg';
+			img = '/ddubeok2/resources/image/default.jpg';
 		}
 		var img2 = data[i].img2;
 		if(img2 == null || img2.trim() == ''){
-			img2 = '/resources/image/default.jpg';
+			img2 = '/ddubeok2/resources/image/default.jpg';
 		}
 		var position = {
 			lat : mapy,
@@ -482,24 +482,24 @@ function weather(mapx,mapy) {
 
 				console.log(icon);
 				
-				var dayClearSky = '/resources/gif/dcsb.gif'; // 있음
-				var nightClearSky = '/resources/gif/ncsb.gif'; //있음
-				var nightFewClouds = '/resources/gif/nfcb.gif'; //있음
-				var dayScatteredClouds = '/resources/gif/dscb.gif';
-				var dayRain = '/resources/gif/drb.gif'; // 있음 
-				var nightRain = '/resources/gif/nrb.gif' ; // 있음 
-				var dayFewClouds = '/resources/gif/dfcb.gif'; //있음
-				var nightScatteredClouds = '/resources/gif/nscb.gif'; //있음
-				var daybrokenclouds = '/resources/gif/dbcb.gif'; //있음
-				var nightbrokenclouds = '/resources/gif/nbcb.gif'; // 있음
-				var dayShowerRain = '/resources/gif/dsrb.gif'; //있음
-				var nightShowerRain = '/resources/gif/nsrb.gif'; //있음
-				var daythunderstorm = '/resources/gif/dtb.gif'; //있음
-				var nightthunderstorm = '/resources/gif/ntb.gif'; //있음 
-				var daySnow = '/resources/gif/dsb.gif'; //있음
-				var nightSnow = '/resources/gif/nsb.gif'; //있음
-				var dayMist = '/resources/gif/dmb.gif'; //있음
-				var nightMist = '/resources/gif/nmb.gif'; //있음
+				var dayClearSky = '/ddubeok2/resources/gif/dcsb.gif'; // 있음
+				var nightClearSky = '/ddubeok2/resources/gif/ncsb.gif'; //있음
+				var nightFewClouds = '/ddubeok2/resources/gif/nfcb.gif'; //있음
+				var dayScatteredClouds = '/ddubeok2/resources/gif/dscb.gif';
+				var dayRain = '/ddubeok2/resources/gif/drb.gif'; // 있음 
+				var nightRain = '/ddubeok2/resources/gif/nrb.gif' ; // 있음 
+				var dayFewClouds = '/ddubeok2/resources/gif/dfcb.gif'; //있음
+				var nightScatteredClouds = '/ddubeok2/resources/gif/nscb.gif'; //있음
+				var daybrokenclouds = '/ddubeok2/resources/gif/dbcb.gif'; //있음
+				var nightbrokenclouds = '/ddubeok2/resources/gif/nbcb.gif'; // 있음
+				var dayShowerRain = '/ddubeok2/resources/gif/dsrb.gif'; //있음
+				var nightShowerRain = '/ddubeok2/resources/gif/nsrb.gif'; //있음
+				var daythunderstorm = '/ddubeok2/resources/gif/dtb.gif'; //있음
+				var nightthunderstorm = '/ddubeok2/resources/gif/ntb.gif'; //있음 
+				var daySnow = '/ddubeok2/resources/gif/dsb.gif'; //있음
+				var nightSnow = '/ddubeok2/resources/gif/nsb.gif'; //있음
+				var dayMist = '/ddubeok2/resources/gif/dmb.gif'; //있음
+				var nightMist = '/ddubeok2/resources/gif/nmb.gif'; //있음
 										  
 				
 				if(i === 0){
@@ -552,7 +552,7 @@ function weather(mapx,mapy) {
 					
 					weather += '<div class="date_box" style="width:100%; text-align: center; opacity: 100%; padding-top: 20px;">';
 					weather += '<p style="font-size: 3rem; color:white; font-weight: 900;">' +date+ '</p>';
-					weather += '<img src="/resources/weatherIcons/'+icon+'.png">';
+					weather += '<img src="/ddubeok2/resources/weatherIcons/'+icon+'.png">';
 					weather += '</div><br>';
 					weather += '<div class="temperature_box" style="width:100%; font-size: 3rem; color: white; text-align: center; font-weight: 900;">';
 					weather += '<p>체감온도 : '+ feelsTemp + '<i class="fas fa-temperature-low"></i></p>';
@@ -673,16 +673,16 @@ function closeNav() {
 <div class="navigation_bar" style="position: fixed; font-size: 1.5rem; margin-left: 100px; margin-top: 12%;">
        <table style="text-decoration: none; text-align: center; margin-left:-50px;">
            <tr>
-               <td><a href="#mapp"><img src="/resources/image/map.jpg" alt="" style="width:100px; height: 100px; border-radius: 25px;"><br>지도 보기<br></a></td>
+               <td><a href="#mapp"><img src="/ddubeok2/resources/image/map.jpg" alt="" style="width:100px; height: 100px; border-radius: 25px;"><br>지도 보기<br></a></td>
            </tr>
            <tr>
-               <td><a href="#weather"><img src="/resources/image/weather.jpg" alt="" style="width:100px; height:100px; border-radius: 25px;"><br>날씨 보기</a></td>
+               <td><a href="#weather"><img src="/ddubeok2/resources/image/weather.jpg" alt="" style="width:100px; height:100px; border-radius: 25px;"><br>날씨 보기</a></td>
            </tr>
            <tr>
-               <td><a href="#hotplace"><img src="/resources/image/tour-attraction.jpg" alt="" style="width:100px; height:100px; border-radius: 25px;"><br>명소 보기</a></td>
+               <td><a href="#hotplace"><img src="/ddubeok2/resources/image/tour-attraction.jpg" alt="" style="width:100px; height:100px; border-radius: 25px;"><br>명소 보기</a></td>
            </tr> 
            <tr>
-               <td><a href="#" onclick="openNav()"><img src="/resources/image/wish-list.jpg" alt="" style="width:100px; height:100px; border-radius: 25px;"><br>나의 위시리스트</a></td>
+               <td><a href="#" onclick="openNav()"><img src="/ddubeok2/resources/image/wish-list.jpg" alt="" style="width:100px; height:100px; border-radius: 25px;"><br>나의 위시리스트</a></td>
            </tr>
        </table> 
        
