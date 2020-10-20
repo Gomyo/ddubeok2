@@ -3,33 +3,19 @@ package com.tolive.ddubeok2.traveluser.domain;
 import javax.mail.Authenticator;
 import javax.mail.PasswordAuthentication;
 
+import lombok.Getter;
+import lombok.Setter;
 
+@Getter
+@Setter
 public class MyAuth extends Authenticator {
 	
 	private String userName;
 	private String userPassword;
-	
-	
-	
-	public String getUserName() {
-		return userName;
-	}
 
-	public void setUserName(String userName) {
-		this.userName = userName;
-	}
-
-	public String getUserPassword() {
-		return userPassword;
-	}
-
-	public void setUserPassword(String userPassword) {
-		this.userPassword = userPassword;
-	}
-
-	public MyAuth(String userName, String userPassword) {
-		this.userName = userName;
-		this.userPassword = userPassword;
+	public MyAuth() {
+		this.userName = "changmin1376@gmail.com";
+		this.userPassword = "pentem9526!";
 	}
 	
 	@Override

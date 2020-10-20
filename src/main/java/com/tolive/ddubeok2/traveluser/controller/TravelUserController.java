@@ -77,12 +77,14 @@ public class TravelUserController {
 	}
 	
 	@PostMapping("/changePw")
-	public ModelAndView changePw(HttpServletRequest request, String password) {
+	public ModelAndView changePw(HttpServletRequest request) {
 		HttpSession session = request.getSession();
-		TravelUser user = (TravelUser)session.getAttribute("loginUser");
-		user.setPassword(password);
+		TravelUser user = userService.getUserInfo((String)session.getAttribute("account"));
+		user.setPassword(request.getParameter("password"));
 		ModelAndView mv = new ModelAndView();
 		userService.changePw(user);
+		session.removeAttribute("account");
+		session.invalidate();
 		mv.addObject("changeResult", "OK");
 		mv.setViewName("home");
 		return mv;	

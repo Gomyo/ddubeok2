@@ -2,6 +2,7 @@ package com.tolive.ddubeok2.traveluser.service;
 
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Properties;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
@@ -51,6 +52,42 @@ public class TravelUserService implements ITravelUserService {
 		String encodedPw = encoder.encode(rawPw);
 		user.setPassword(encodedPw);
 		userMapper.changePw(user);
+	}
+
+	@Override
+	public String findUserAccount(String email) {
+		if(userMapper.findUserAccount(email) != null) return userMapper.findUserAccount(email);
+		else return "가입하신 아이디가 없습니다";
+	}
+	
+	@Override
+	public Properties getProps() {
+		Properties props = new Properties();
+		props.put("mail.smtp.starttls.enable", "true");
+		props.put("mail.transport.protocol", "smtp");
+		props.put("mail.smtp.host", "smtp.gmail.com");
+		props.put("mail.smtp.port", "465");
+		props.put("mail.smtp.auth", "true");
+		props.put("mail.smtp.socketFactory.class", "javax.net.ssl.SSLSocketFactory");
+		return props;
+	}
+	
+	@Override
+	public String setEmailContent(String kind, String message) {
+		StringBuffer content = new StringBuffer();
+		content.append("<html>");
+		content.append("<head>");
+		content.append("<meta charset='UTF-8'>");
+		content.append("</head>");
+		content.append("<body>");
+		if(kind.equals("account")) {
+			content.append("<p>가입하신 아이디는 <b>" + message + "</b>입니다.<p>");
+		} else if(kind.equals("password")) {
+			content.append("<p>인증번호는 <b>" + message + "</b>입니다.<p>");
+		}
+		content.append("</body>");
+		content.append("</html>");
+		return content.toString();
 	}
 
 }
