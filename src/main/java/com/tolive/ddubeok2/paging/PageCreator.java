@@ -1,6 +1,10 @@
 package com.tolive.ddubeok2.paging;
 
+import lombok.Getter;
+import lombok.Setter;
 
+@Getter
+@Setter
 public class PageCreator {
 
 	//페이지번호 정보와 한 페이지당 들어갈 게시물 수의 정보를 갖는 객체
@@ -14,86 +18,6 @@ public class PageCreator {
 	//한 화면에 제한할 페이지의 개수.
 	private final Integer displayPageNum = 10;
 	
-	
-
-	public Page getPaging() {
-		return paging;
-	}
-
-
-
-	public void setPaging(Page paging) {
-		this.paging = paging;
-	}
-
-
-
-	public Integer getArticleTotalCount() {
-		return articleTotalCount;
-	}
-
-
-
-	public void setArticleTotalCount(Integer articleTotalCount) {
-		this.articleTotalCount = articleTotalCount;
-	}
-
-
-
-	public Integer getBeginPage() {
-		return beginPage;
-	}
-
-
-
-	public void setBeginPage(Integer beginPage) {
-		this.beginPage = beginPage;
-	}
-
-
-
-	public Integer getEndPage() {
-		return endPage;
-	}
-
-
-
-	public void setEndPage(Integer endPage) {
-		this.endPage = endPage;
-	}
-
-
-
-	public boolean isPrev() {
-		return prev;
-	}
-
-
-
-	public void setPrev(boolean prev) {
-		this.prev = prev;
-	}
-
-
-
-	public boolean isNext() {
-		return next;
-	}
-
-
-
-	public void setNext(boolean next) {
-		this.next = next;
-	}
-
-
-
-	public Integer getDisplayPageNum() {
-		return displayPageNum;
-	}
-
-
-
 	public PageCreator(Page paging, Integer articleTotalCount) {
 		this.paging = paging;
 		this.articleTotalCount = articleTotalCount;

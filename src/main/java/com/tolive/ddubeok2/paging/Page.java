@@ -1,19 +1,12 @@
 package com.tolive.ddubeok2.paging;
 
+import lombok.Getter;
+
+@Getter
 public class Page {
 	
 	private Integer page; //클라이언트가 요청한 페이지정보
 	private Integer countPerPage; //클라이언트가 요청한 한페이지 당 보여줄 게시물 수	
-	
-	
-	
-	public Integer getPage() {
-		return page;
-	}
-
-	public Integer getCountPerPage() {
-		return countPerPage;
-	}
 
 	public Page() {
 		this.page = 1;
