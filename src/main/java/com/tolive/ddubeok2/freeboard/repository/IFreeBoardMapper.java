@@ -4,6 +4,7 @@ import java.util.List;
 import java.util.Map;
 
 import com.tolive.ddubeok2.freeboard.domain.FreeBoard;
+import com.tolive.ddubeok2.paging.Page;
 
 public interface IFreeBoardMapper {
 	
@@ -13,7 +14,7 @@ public interface IFreeBoardMapper {
 	void updateViewCnt(Integer boardId);
 	void delete(Integer boardId);
 	FreeBoard selectOne(Integer boardId);
-	List<FreeBoard> selectAll();
+	List<FreeBoard> selectAll(Page page);
 	Integer countBoard();
 
 }

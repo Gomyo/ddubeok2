@@ -8,9 +8,10 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import com.tolive.ddubeok2.freeboard.domain.FreeBoard;
 import com.tolive.ddubeok2.freeboard.repository.IFreeBoardMapper;
 import com.tolive.ddubeok2.freereply.repository.IFreeReplyMapper;
-import com.tolive.ddubeok2.freeboard.domain.FreeBoard;
+import com.tolive.ddubeok2.paging.Page;
 
 @Service
 public class FreeBoardService implements IFreeBoardService {
@@ -57,8 +58,8 @@ public class FreeBoardService implements IFreeBoardService {
 	}
 
 	@Override
-	public List<FreeBoard> selectAll() {
-		return boardMapper.selectAll();
+	public List<FreeBoard> selectAll(Page page) {
+		return boardMapper.selectAll(page);
 	}
 
 	@Override

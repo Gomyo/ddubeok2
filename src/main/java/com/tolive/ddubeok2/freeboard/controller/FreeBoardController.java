@@ -2,6 +2,8 @@ package com.tolive.ddubeok2.freeboard.controller;
 
 import java.util.List;
 
+import javax.servlet.http.HttpServletRequest;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.DeleteMapping;
@@ -12,6 +14,8 @@ import org.springframework.web.servlet.ModelAndView;
 
 import com.tolive.ddubeok2.freeboard.domain.FreeBoard;
 import com.tolive.ddubeok2.freeboard.service.IFreeBoardService;
+import com.tolive.ddubeok2.paging.Page;
+import com.tolive.ddubeok2.paging.PageCreator;
 
 @Controller
 @RequestMapping("/free")
@@ -46,10 +50,15 @@ public class FreeBoardController {
 	}
 
 	@GetMapping("/list")
-	public ModelAndView getList() {
-		List<FreeBoard> boards = service.selectAll();
+	public ModelAndView getList(HttpServletRequest request) {
+		Integer cPage = request.getParameter("cPage") != null ? Integer.parseInt(request.getParameter("cPage")) : 1 ;
+		Page page = new Page();
+		page.setPage(cPage);
+		PageCreator pc = new PageCreator(page, service.countBoard());
+		List<FreeBoard> boards = service.selectAll(page);
 		ModelAndView mv = new ModelAndView();
 		mv.addObject("boards", boards);
+		mv.addObject("pc", pc);
 		mv.setViewName("free/list");
 		return mv;
 	}
