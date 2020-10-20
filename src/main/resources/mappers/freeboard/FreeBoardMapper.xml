@@ -50,6 +50,7 @@
 <select id="selectAll" resultMap="FreeBoardMap">
 	SELECT * FROM free_board
 	ORDER BY board_id DESC
+	LIMIT #{pageStart}, #{countPerPage}
 </select>
 
 <select id="countBoard" resultType="int">
