@@ -23,10 +23,10 @@
 	<div class="wrap">
 		<jsp:include page="../include/header.jsp" />
 		<!-- Main Page -->
-		<div class="main-content" style="border: 1px solid black;">
+		<div class="main-content" style="height:115%; padding-bottom:200px;">
 
 			<div class="write_cover" >
-				<form action="/free/write" method="post" style="width: 80%; height: 750px; margin-left: 10%; ">
+				<form action="/free/write" id="writeForm" method="post" style="width: 80%; height: 750px; margin-left: 10%; ">
 					<h1
 						style="margin-left: 20px; padding-top: 30px; padding-bottom: 30px;">자유게시판</h1>
 					<hr>
@@ -34,17 +34,20 @@
 					<div class="info_box" style="">
 						<div class="form-group" style="width: 70%; padding-left: 1%; display:flex;">
 							<label for="write_title" style="width:50px; margin-top:5px;">제목</label> 
-							<input type="text" class="form-control" name="title" id="write_title" placeholder="제목을 적으세요">
+							<input type="text" class="form-control" name="title" id="title" placeholder="제목을 적으세요">
 						</div>
 
 						<div class="form-group" style="width: 40%; padding-left: 1%; display: flex;">
 							<label for="write_author" style="width:50px; margin-top:5px;">글쓴이 </label> 
-							<input type="text" class="form-control" name="writer" id="write_author" value="${loginUser.nickname}" readonly>
+							<input type="text" class="form-control" name="writer" id="nickname" value="${loginUser.nickname}" readonly>
 						</div>
 						<hr>
 					</div>
 					<br>
-					<textarea name="content" id="content" style="padding-left: 1%;"></textarea>
+					<div style="margin-bottom:50px;">
+						<textarea name="content" id="content" style="padding-left: 1%; padding-top: 100px"></textarea>
+					</div>
+					
 					<button class="btn btn-primary" style="float: left; margin-left:10px; margin-bottom: 100px; font-size: 1.5rem; margin-top: 1px;"
 						type="button" id="cancelBtn">목록</button>
 					<button class="btn btn-primary" style="float: right; margin-right:10px; margin-bottom: 100px; font-size: 1.5rem; margin-top: 1px;"
