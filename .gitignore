@@ -120,9 +120,7 @@ $RECYCLE.BIN/
 *.lnk
 
 # 보안
-src/main/webapp/WEB-INF/views/main/list.jsp
 src/main/webapp/resources/spring/appServlet/servlet-context.xml
 src/main/webapp/resources/spring/root-context.xml
 src/main/resources/spring/root-context.xml
 src/main/resources/spring/servlet-context.xml
-src/main/webapp/resources/main/list.jsp

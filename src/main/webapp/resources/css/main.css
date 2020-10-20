@@ -19,6 +19,7 @@ html, body {
 	position: absolute;
 	display: flex;
 	min-height: 100vh;
+	min-width: 100vw;
 	flex-direction: column;
 }
 
@@ -42,6 +43,7 @@ html, body {
 }
 .landing-fo-section {background-color: #f9f7f6; display: flex; font-family: Eoe_Zno_L;}
 .landing-fo-section > .width-module {width: 60%; margin: 20px auto;}
+.landing-fo-section > .width-module2 {width: 100%; margin: 20px auto;}
 .landing-fo-section > .width-module > .tourInfo {text-align: center; padding:40px 0 0 0;}
 .landing-fo-section > .width-module > .tourInfo > div.textSection > h2 {font-weight: normal;}
 .landing-fo-section > .width-module > .tourInfo > div.textSection > span {margin-top:22px;}
