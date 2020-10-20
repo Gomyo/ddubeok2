@@ -77,6 +77,10 @@ if(message === "loginCheck") {
 	alert("로그인을 먼저 해주세요!");
 }
 
+const changeResult = "${changeResult}";
+if(changeResult === "OK") {
+	alert("비밀번호변경완료!");
+}
 AOS.init();
 </script>
 
