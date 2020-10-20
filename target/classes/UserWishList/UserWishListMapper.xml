@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!-- <mapper namespace="com.tolive.ddubeok2.mainboard.repository.IMainBoardMapper"> -->
+<mapper namespace="com.tolive.ddubeok2.userWishList.repository.IMainBoardMapper">
+
+
+<select id="getUserWishList" resultType="com.tolive.ddubeok2.userWishList.domain.UserWish">
+	SELECT * FROM user_wish
+	WHERE nickname=#{nickname}
+</select>
+
+</mapper>
