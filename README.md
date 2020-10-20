@@ -9,7 +9,7 @@
 |하승철|FE|Alaxhenry@gmail.com||
 |김지환|BE|basskingJH@gmail.com||
 |신창민|BE|changmin1376@gmail.com||
-|김병재|기획서|qudwo55693@gmail.com||
+|김병재|기획|qudwo55693@gmail.com||
 
 
 
