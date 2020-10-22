@@ -1,0 +1,61 @@
+
+.table-wrapper-scroll-y {
+    display: block;
+    width: 450px;
+    height: 600px;
+    border: 1px solid black;
+    float: left;
+    left: 100px;
+    top: 50px;
+    overflow-y: scroll;
+}
+
+.table-wrapper-scroll-y a{
+    color: green;
+    text-align: center;
+}
+
+
+.notice_text {
+    border: 1px solid black;
+    top: 50px;
+    left: 600px;
+    width: 1000px;
+    height: 600px;
+    padding: 50px;
+    overflow-y: scroll;
+}
+
+.notice_table {
+    width: 100%;
+    text-align: center;
+}
+
+.notice_table tr{
+    border-bottom: 1px solid black;
+    padding-bottom: 10px;
+}
+
+.notice_table tr:hover{
+    background-color: dodgerblue;
+    color: tomato;
+}
+
+.logo_td {
+	transform: scale(1);
+	-webkit-transform: scale(1);
+	-moz-transform: scale(1);
+	-ms-transform: scale(1);
+	-o-transform: scale(1);
+	transition: all 0.3s ease-in-out; /* 부드러운 모션을 위해 추가*/
+}
+
+.logo_td:hover {
+	transform: scale(1.1);
+	-webkit-transform: scale(1.1);
+	-moz-transform: scale(1.1);
+	-ms-transform: scale(1.1);
+	-o-transform: scale(1.1);
+}
+
+

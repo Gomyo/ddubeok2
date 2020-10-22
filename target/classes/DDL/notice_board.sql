@@ -1,0 +1,8 @@
+CREATE TABLE notice_board (
+	board_id INT PRIMARY KEY AUTO_INCREMENT,
+	title VARCHAR(50) NOT NULL,
+	content TEXT NOT NULL,
+	reg_date TIMESTAMP NOT NULL DEFAULT NOW(),
+	view_cnt INT NOT NULL DEFAULT 0,
+	reply_cnt INT NOT NULL DEFAULT 0
+);

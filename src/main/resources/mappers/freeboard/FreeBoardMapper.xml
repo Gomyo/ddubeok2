@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.tolive.ddubeok2.freeboard.repository.IFreeBoardMapper">
+
+<resultMap id="FreeBoardMap" type="com.tolive.ddubeok2.freeboard.domain.FreeBoard">
+	<id property="boardId" column="board_id" />
+	<result property="title" column="title" />
+	<result property="writer" column="writer" />
+	<result property="content" column="content" />
+	<result property="regDate" column="reg_date" />
+	<result property="viewCnt" column="view_cnt" />
+	<result property="replyCnt" column="reply_cnt" />
+</resultMap>
+
+<insert id="write">
+	INSERT INTO free_board
+		(title, writer, content)
+	VALUES (#{title}, #{writer}, #{content})
+</insert>
+
+<update id="update">
+	UPDATE free_board
+	SET title = #{title}, content = #{content}
+	WHERE board_id = #{boardId}
+</update>
+
+<update id="updateReplyCnt">
+	UPDATE free_board 
+	SET reply_cnt = #{count}
+	WHERE board_id = #{boardId}
+</update>
+
+<update id="updateViewCnt">
+	UPDATE free_board 
+	SET view_cnt = view_cnt + 1
+	WHERE board_id = #{boardId}
+</update>
+
+<delete id="delete">
+	DELETE FROM free_board
+	WHERE board_id = #{boardId}
+</delete>
+
+<select id="selectOne" resultMap="FreeBoardMap">
+	SELECT * FROM free_board
+	WHERE board_id = #{boardId}
+</select>
+
+<select id="selectAll" resultMap="FreeBoardMap">
+	SELECT * FROM free_board
+	ORDER BY board_id DESC
+	LIMIT #{pageStart}, #{countPerPage}
+</select>
+
+<select id="countBoard" resultType="int">
+	SELECT COUNT(board_id) 
+	FROM free_board
+</select>
+
+</mapper>

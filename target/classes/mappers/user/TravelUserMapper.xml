@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+    
+<mapper namespace="com.tolive.ddubeok2.traveluser.repository.ITravelUserMapper">
+
+<!-- 1. 회원 등록기능 -->
+<insert id="register">
+	INSERT INTO travel_user
+	 (account, password, nickname, email) 
+	VALUES (#{account}, #{password}, #{nickname}, #{email}) 
+</insert>
+
+<!-- 1-1. 아이디 or 이메일 중복체크 -->
+<select id="isDuplicate" parameterType="hashmap" resultType="int">
+	SELECT COUNT(*) 
+	FROM travel_user
+	<if test="kind == 'account'"> 
+		WHERE account=#{info}
+	</if> 
+	<if test="kind == 'nickname'"> 
+		WHERE nickname=#{info}
+	</if> 
+	<if test="kind == 'email'"> 
+		WHERE email=#{info}
+	</if> 
+</select>
+
+<!-- 2. 단일 회원 정보조회 기능 -->
+<select id="getUserInfo" resultMap="UserMap">
+	SELECT * 
+	FROM travel_user 
+	WHERE account = #{account}
+</select>
+
+<update id="changePw">
+	UPDATE travel_user
+	SET password = #{password}
+	WHERE account = #{account}
+</update>
+
+<select id="findUserAccount" resultType="String">
+	SELECT account
+	FROM travel_user
+	WHERE email = #{email}
+</select>
+
+<resultMap id="UserMap" type="com.tolive.ddubeok2.traveluser.domain.TravelUser">
+	<id property="account" column="account" />
+	<result property="password" column="password" />
+	<result property="nickname" column="nickname" />
+	<result property="email" column="email" />
+	<result property="grade" column="grade" />
+</resultMap>
+
+</mapper>
