@@ -45,10 +45,13 @@
 }
 
 
+<<<<<<< HEAD
+=======
 .list_body{
 	padding-left: 4%;
 	padding-right:4%;
 }
+>>>>>>> d600351db5507a0d4f5412d0f64d4cc820f1e0b0
 
 /*board_list*/
 
@@ -104,10 +107,18 @@
 
 /*board_view*/
 .view_div {
+<<<<<<< HEAD
+	position: relative;
+	margin: 5px 5px auto 25%;
+	border: 1px solid black;
+	background-color: white;
+	width: 50%;
+=======
 	border: 1px solid black;
 	background-color: white;
 	width: 1925px;
 	height: 800px;
+>>>>>>> d600351db5507a0d4f5412d0f64d4cc820f1e0b0
 	font-family: 'GmarketSansMedium';
 	font-size: 1rem;
 	display: inline-block;
@@ -117,7 +128,10 @@
 		font-size: 2.3rem;
 	}
 
+<<<<<<< HEAD
+=======
 /*
+>>>>>>> d600351db5507a0d4f5412d0f64d4cc820f1e0b0
 @media screen and (max-width: 1145px) {
 	.view_div {
 		position: relative;
