@@ -33,6 +33,21 @@
 			<version>${org.springframework-version}</version>
 		</dependency>
 		
+		<!-- 메일 관련 maven -->
+		<dependency>
+		    <groupId>javax.activation</groupId>
+		    <artifactId>activation</artifactId>
+		    <version>1.1.1</version>
+		</dependency>
+		
+		<dependency>
+		    <groupId>javax.mail</groupId>
+		    <artifactId>mail</artifactId>
+		    <version>1.4.7</version>
+		</dependency>
+
+
+		
 		<!-- Spring security 모듈 설치 -->		
 		<dependency>
 		    <groupId>org.springframework.security</groupId>
@@ -81,7 +96,21 @@
 			<version>1.18.8</version>
 			<scope>provided</scope>
 		</dependency>
-				
+		
+		<!-- Spring Transaction 모듈 설치 -->
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-tx</artifactId>
+			<version>${org.springframework-version}</version>
+		</dependency>
+		
+		<!-- json-simple 1.1.1 라이브러리 -->
+		<dependency>
+		    <groupId>com.googlecode.json-simple</groupId>
+		    <artifactId>json-simple</artifactId>
+		    <version>1.1.1</version>
+		</dependency>
+			
 		<!-- AspectJ -->
 		<dependency>
 			<groupId>org.aspectj</groupId>

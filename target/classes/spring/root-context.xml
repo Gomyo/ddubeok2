@@ -18,8 +18,17 @@
 		<property name="mapperLocations" value="classpath:/mappers/**/*Mapper.xml" />
 	</bean>
 	
+	<bean id="txManager" class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
+		<property name="dataSource" ref="dataSource" />
+	</bean>
+	
 	<mybatis-spring:scan base-package="com.tolive.ddubeok2.traveluser.repository" />
 	<mybatis-spring:scan base-package="com.tolive.ddubeok2.noticeboard.repository" />
 	<mybatis-spring:scan base-package="com.tolive.ddubeok2.noticereply.repository" />
+	<mybatis-spring:scan base-package="com.tolive.ddubeok2.freeboard.repository" />
+	<mybatis-spring:scan base-package="com.tolive.ddubeok2.freereply.repository" />
+	<mybatis-spring:scan base-package="com.tolive.ddubeok2.postboard.repository" />
+	<mybatis-spring:scan base-package="com.tolive.ddubeok2.postreply.repository" />
+	<mybatis-spring:scan base-package="com.tolive.ddubeok2.mainboard.repository" />
 	
 </beans>

@@ -8,11 +8,11 @@
 	    <h1 class="display-4">Contact</h1>
 	    	<!-- Social Icons -->
 			<div class="footer-social">
-				<span class="footer-social-items"><a href="https://www.instagram.com/joo.non/?hl=ko" target="_blank"><img src="./resources/image/youtube.png" style="width:30px;"></a></span>
-				<span class="footer-social-items"><a href="https://www.instagram.com/joo.non/?hl=ko" target="_blank"><img src="./resources/image/instagram.png" style="width:30px;"></a></span>
-				<span class="footer-social-items"><a href="https://www.instagram.com/joo.non/?hl=ko" target="_blank"><img src="./resources/image/facebook.png" style="width:30px;"></a></span>
-				<span class="footer-social-items"><a href="https://www.instagram.com/joo.non/?hl=ko" target="_blank"><img src="./resources/image/kakaotalk.png" style="width:30px;"></a></span>
-				<span class="footer-social-items"><a href="https://www.instagram.com/joo.non/?hl=ko" target="_blank"><img src="./resources/image/naverblog.png" style="width:30px;"></a></span>
+				<span class="footer-social-items"><a href="https://www.instagram.com/joo.non/?hl=ko" target="_blank"><img src="/ddubeok2/resources/image/youtube.png" style="width:30px;"></a></span>
+				<span class="footer-social-items"><a href="https://www.instagram.com/joo.non/?hl=ko" target="_blank"><img src="/ddubeok2/resources/image/instagram.png" style="width:30px;"></a></span>
+				<span class="footer-social-items"><a href="https://www.instagram.com/joo.non/?hl=ko" target="_blank"><img src="/ddubeok2/resources/image/facebook.png" style="width:30px;"></a></span>
+				<span class="footer-social-items"><a href="https://www.instagram.com/joo.non/?hl=ko" target="_blank"><img src="/ddubeok2/resources/image/kakaotalk.png" style="width:30px;"></a></span>
+				<span class="footer-social-items"><a href="https://www.instagram.com/joo.non/?hl=ko" target="_blank"><img src="/ddubeok2/resources/image/naverblog.png" style="width:30px;"></a></span>
 			</div>
 	    <hr class="my-4" />
 	    <p>
@@ -21,6 +21,6 @@
 				&copy; gomyo <br/>
 				Email : engcraft1102@gmail.com
 			</div>
-	    <a class="btn btn-primary" href="./about" role="button">About us</a>
+	    <a class="btn btn-secondary" href="/ddubeok2/about" role="button">About us</a>
 	</div>						
 </footer>

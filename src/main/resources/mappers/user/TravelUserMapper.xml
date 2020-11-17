@@ -32,6 +32,18 @@
 	WHERE account = #{account}
 </select>
 
+<update id="changePw">
+	UPDATE travel_user
+	SET password = #{password}
+	WHERE account = #{account}
+</update>
+
+<select id="findUserAccount" resultType="String">
+	SELECT account
+	FROM travel_user
+	WHERE email = #{email}
+</select>
+
 <resultMap id="UserMap" type="com.tolive.ddubeok2.traveluser.domain.TravelUser">
 	<id property="account" column="account" />
 	<result property="password" column="password" />

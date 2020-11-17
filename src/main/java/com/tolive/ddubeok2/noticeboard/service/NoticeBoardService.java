@@ -6,6 +6,7 @@ import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import com.tolive.ddubeok2.noticeboard.domain.NoticeBoard;
 import com.tolive.ddubeok2.noticeboard.repository.INoticeBoardMapper;
@@ -43,6 +44,7 @@ public class NoticeBoardService implements INoticeBoardService {
 		boardMapper.updateViewCnt(boardId);
 	}
 
+	@Transactional
 	@Override
 	public void delete(Integer boardId) {
 		replyMapper.deleteAll(boardId);

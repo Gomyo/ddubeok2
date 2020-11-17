@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.tolive.ddubeok2.mainboard.repository.IMainBoardMapper">
+
+<select id="getAreacodeList" resultType="com.tolive.ddubeok2.mainboard.domain.Areacode">
+	SELECT * FROM areacode
+</select>
+
+<select id="getSigunguList" resultType="com.tolive.ddubeok2.mainboard.domain.Sigungucode">
+	SELECT * FROM sigungucode
+	WHERE areacode=#{areacode}
+	ORDER BY sigungucode ASC
+</select>
+
+<select id="dataList" resultType="com.tolive.ddubeok2.mainboard.domain.Areabased">
+	SELECT * FROM areabased
+	<include refid="search" />
+	ORDER BY sigungucode ASC
+</select>
+
+<insert id="addUserWish">
+	INSERT INTO user_wish
+	VALUES (#{dep}, #{arr}, #{nickname}, #{addr1}, #{addr2}, #{title}, #{contenttype}, #{mapx}, #{mapy}, #{tel}, #{img})
+</insert>
+
+<sql id="search">
+	<if test="contenttype == 10 &amp;&amp; sigungucode == 40">
+		WHERE areacode = #{areacode}
+	</if>
+	<if test="sigungucode == 40">
+		WHERE areacode = #{areacode} AND contenttype = #{contenttype}
+	</if>
+	<if test="contenttype == 10">
+		WHERE areacode = #{areacode} AND sigungucode = #{sigungucode}
+	</if>
+	<if test="contenttype != 10 &amp;&amp; sigungucode != 40">
+		WHERE areacode = #{areacode} AND contenttype = #{contenttype} AND sigungucode = #{sigungucode}
+	</if>
+</sql>
+</mapper>

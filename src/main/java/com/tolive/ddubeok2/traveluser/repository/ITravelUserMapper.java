@@ -14,4 +14,10 @@ public interface ITravelUserMapper {
 	
 	//단일 회원정보 조회기능
 	TravelUser getUserInfo(String account);
+	
+	//회원 비밀번호 변경
+	void changePw(TravelUser user);
+	
+	//회원 아이디 조회
+	String findUserAccount(String email);
 }

@@ -73,7 +73,21 @@ public class TravelUserController {
 			session.removeAttribute("loginUser");
 			session.invalidate();
 		}		
-		return new ModelAndView("home");
+		return new ModelAndView("redirect:/");
+	}
+	
+	@PostMapping("/changePw")
+	public ModelAndView changePw(HttpServletRequest request) {
+		HttpSession session = request.getSession();
+		TravelUser user = userService.getUserInfo((String)session.getAttribute("account"));
+		user.setPassword(request.getParameter("password"));
+		ModelAndView mv = new ModelAndView();
+		userService.changePw(user);
+		session.removeAttribute("account");
+		session.invalidate();
+		mv.addObject("changeResult", "OK");
+		mv.setViewName("home");
+		return mv;	
 	}
 	
 }

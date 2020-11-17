@@ -16,9 +16,5 @@ public class FreeBoard {
 	private Date regDate;
 	private Integer viewCnt;
 	private Integer replyCnt;
-	private String areacode;
-	private String sigungucode;
-	
-	private String[] files;
 
 }

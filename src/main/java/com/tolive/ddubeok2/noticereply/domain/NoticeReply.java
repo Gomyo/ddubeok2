@@ -2,11 +2,6 @@ package com.tolive.ddubeok2.noticereply.domain;
 
 import java.util.Date;
 
-import lombok.Getter;
-import lombok.Setter;
-
-@Getter
-@Setter
 public class NoticeReply {
 
 	private Integer replyId;
@@ -14,4 +9,36 @@ public class NoticeReply {
 	private String content;
 	private Date regDate;
 	private Integer boardId;
+	public Integer getReplyId() {
+		return replyId;
+	}
+	public void setReplyId(Integer replyId) {
+		this.replyId = replyId;
+	}
+	public String getWriter() {
+		return writer;
+	}
+	public void setWriter(String writer) {
+		this.writer = writer;
+	}
+	public String getContent() {
+		return content;
+	}
+	public void setContent(String content) {
+		this.content = content;
+	}
+	public Date getRegDate() {
+		return regDate;
+	}
+	public void setRegDate(Date regDate) {
+		this.regDate = regDate;
+	}
+	public Integer getBoardId() {
+		return boardId;
+	}
+	public void setBoardId(Integer boardId) {
+		this.boardId = boardId;
+	}
+	
+	
 }
