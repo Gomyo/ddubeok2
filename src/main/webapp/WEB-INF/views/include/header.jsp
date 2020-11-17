@@ -67,7 +67,7 @@
                     	커뮤니티
                 </a>
                 <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                    <a class="dropdown-item" href="/ddubeok2/free_board.do">자유게시판</a>
+                    <a class="dropdown-item" href="./freeboard">자유게시판</a>
                     <div class="dropdown-divider"></div>
                     <a class="dropdown-item" href="#">후기게시판</a>
                 </div>

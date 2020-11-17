@@ -8,11 +8,15 @@ import org.springframework.web.servlet.ModelAndView;
 public class FreeBoardController {
 
 	@GetMapping("/freeboard")
-	public ModelAndView list() {
-		return new ModelAndView("board/free_board");
+	public ModelAndView freeBoardList() {
+		return new ModelAndView("freeboard");
 	}
-	@GetMapping("/test")
-	public ModelAndView test() {
-		return new ModelAndView("test");
+	@GetMapping("/freeboard_write")
+	public ModelAndView freeBoardWrite() {
+		return new ModelAndView("freeboard_write");
+	}
+	@GetMapping("/freeboard_view")
+	public ModelAndView freeBoardView() {
+		return new ModelAndView("freeboard_view");
 	}
 }
